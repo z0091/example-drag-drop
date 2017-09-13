@@ -37,15 +37,11 @@ function resolve(dir) {
 
 const webpackConfig = {
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js', '.json'],
         modules: [
             srcPath,
             'node_modules',
         ],
-        alias: {
-            vue$: 'vue/dist/vue.esm.js',
-            '@': resolve('src'),
-        },
     },
     output: {
         filename: `[name]-${version}-[hash]${isRelease ? '.min' : ''}.js`,
@@ -91,17 +87,6 @@ const appConfig = {
                 include: [resolve('src'), resolve('test')],
                 options: {
                     formatter: eslintFormatter,
-                },
-            },
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        scss: 'vue-style-loader!css-loader!sass-loader',
-                        sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-                    },
-                    extractCSS: true,
                 },
             },
             {

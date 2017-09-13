@@ -1,4 +1,4 @@
-# express-starter-kit
+# example-drag-drop
 
 ## Overview
 

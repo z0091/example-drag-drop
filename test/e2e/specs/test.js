@@ -11,7 +11,7 @@ module.exports = {
         browser
             .url(devServer)
             .waitForElementVisible('#app', 5000)
-            .assert.containsText('p', 'Welcome to Your Vue.js App')
+            .assert.containsText('p', 'Welcome to Your App')
             .assert.elementCount('p', 1)
             .end();
     },

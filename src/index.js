@@ -1,14 +1,20 @@
-import Vue from 'vue';
-import ElementUI from 'element-ui';
-import App from './App.vue';
-import router from './router';
+/* eslint-disable no-console */
+import { Model, View } from 'backbone';
 
-Vue.config.productionTip = false;
-Vue.use(ElementUI);
+class App extends View {
+    constructor() {
+        super();
+        this.el = document.getElementById('app');
+        this.model = new Model({ mess: 'Welcome to Your App' });
+    }
 
-new Vue({ // eslint-disable-line no-new
-    el: '#app',
-    router,
-    template: '<App/>',
-    components: { App },
+    render() {
+        this.el.innerHTML = `<p>${this.model.get('mess')}</p>`;
+    }
+}
+
+const app = new App();
+
+document.addEventListener('DOMContentLoaded', () => {
+    app.render();
 });

@@ -1,8 +1,6 @@
-import Vue from 'vue';
 import chaiSubset from 'chai-subset';
 
 global.chai.use(chaiSubset);
-Vue.config.productionTip = false;
 
 // Base tests
 describe('Base process.env tests', () => {
