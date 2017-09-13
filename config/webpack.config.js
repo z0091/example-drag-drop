@@ -80,15 +80,17 @@ const appConfig = {
 
     module: {
         rules: [
-            {
-                test: /\.(js|vue)$/,
-                loader: 'eslint-loader',
-                enforce: 'pre',
-                include: [resolve('src'), resolve('test')],
-                options: {
-                    formatter: eslintFormatter,
+            ...isDebug ? [] : [
+                {
+                    test: /\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    enforce: 'pre',
+                    include: [resolve('src'), resolve('test')],
+                    options: {
+                        formatter: eslintFormatter,
+                    },
                 },
-            },
+            ],
             {
                 test: /\.js$/,
                 use: 'babel-loader',
