@@ -1,0 +1,12 @@
+node_modules
+bower_components
+build
+dist
+static/public
+*.sublime*
+.idea
+/local.conf.json
+/log
+test/e2e/reports
+npm-debug.log
+selenium-debug.log
