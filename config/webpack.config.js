@@ -40,6 +40,7 @@ const webpackConfig = {
         extensions: ['.js', '.json'],
         modules: [
             srcPath,
+            assetsPath,
             'node_modules',
         ],
     },
